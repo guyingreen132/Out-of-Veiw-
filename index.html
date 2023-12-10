@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My JavaScript Project</title>
+    <script src="main.js"></script>
+    <link type="text/css" href="extra/style.css" rel="stylesheet" media="all" />
+  </head>
+  <body>
+
+<img src="assets/score.svg" onclick="score()">
+<br>
+<br>
+<hr>
+<br>
+<img src="assets/upgrade.svg" onclick="upgrade1()">
+<img src="assets/upgrade1.svg" onclick="upgrade2()">
+<img src="assets/upgrade2.svg" onclick="upgrade3()">
+<img src="assets/upgrade3.svg" onclick="upgrade4()">
+<img src="assets/show.svg" onclick="show()">
+      
+<script>
+var scoresome=0;
+var scoresome1=1;
+function score() {
+    scoresome=scoresome+scoresome1;
+}
+
+   
+function upgrade1() {
+    if(scoresome>9) {scoresome=scoresome-10;scoresome1=scoresome1+1;window.open('extra/success.html')}
+}
+
+function upgrade2() {
+    if(scoresome>49) {scoresome=scoresome-50;scoresome1=scoresome1+10;window.open('extra/success.html')}
+}
+    
+function upgrade3() {
+    if(scoresome>99) {scoresome=scoresome-100;scoresome1=scoresome1+25;window.open('extra/success.html')}
+}
+    
+function upgrade4() {
+    if(scoresome>999) {scoresome=scoresome-1000;scoresome1=scoresome1+300;window.open('extra/success.html')}
+}
+    
+function show() {
+    if(scoresome>999) {scoresome=scoresome-1000;localStorage.setItem('scoresome',scoresome);window.open('extra/show.html')}
+}
+
+</script>
+      
+  </body>
+</html>
